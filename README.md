@@ -8,9 +8,9 @@ Make backups
 
 Make synbolic link 
 ------------------
-ln -s ~/dotfiles/_vimrc ~/.vimrc
-ln -s ~/dotfiles/_gitconfig ~/.gitconfig
+    ln -s ~/dotfiles/_vimrc ~/.vimrc
+    ln -s ~/dotfiles/_gitconfig ~/.gitconfig
 
 Copy to your setting PATH
 -------------------------
-cp ~/dotfiles/git_diff_wrapper /usr/local/bin/
+    cp ~/dotfiles/git_diff_wrapper /usr/local/bin/
