@@ -1,4 +1,22 @@
+"""""""""""""""""
+" Vundle settings
+"""""""""""""""""
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Vundle で管理するプラグインを書いていく
+" required!
+Bundle 'gmarik/vundle' 
+
+" My Bundles in here
+Bundle 'unite.vim'
+
+" required!
 filetype plugin indent on
+
+"""""""""""""""""""""""""
+
 syntax on
 set number
 
