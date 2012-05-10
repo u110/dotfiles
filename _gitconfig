@@ -1,0 +1,15 @@
+[diff]
+  external = git_diff_wrapper
+[pager]
+  diff =
+[user]
+#	name =
+#  email =
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[user]
+	name = Yuu Ito
+	email = yu_ito@voyagegroup.com
