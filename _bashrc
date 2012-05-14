@@ -1,0 +1,32 @@
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias v='vim'
+alias l='ls'
+alias sl='ls'
+alias la='ls -a'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Git commands
+alias gitci="git commit"
+alias gitst="git status"
+alias gitlog="git log"
+alias gitadd="git add -A"
+alias gitdiff="git diff"
+alias gitb='git branch'
+
+alias gpull="git pull"
+alias gd="git diff"
+alias gco="git checkout"
+alias gp="git pull --rebase"
+
+# phpunit
+alias phpunit='phpunit --debug --colors'
