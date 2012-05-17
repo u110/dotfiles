@@ -11,6 +11,7 @@ Bundle 'gmarik/vundle'
 
 " My Bundles in here
 Bundle 'unite.vim'
+Bundle 'ZenCoding.vim'
 
 " required!
 filetype plugin indent on
