@@ -1,7 +1,6 @@
 # .bashrc
 
 # User specific aliases and functions
-
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -30,4 +29,18 @@ alias gco="git checkout"
 alias gp="git pull --rebase"
 
 # phpunit
-alias phpunit='phpunit --debug --colors'
+alias phpunit='phpunit --colors'
+
+
+
+# settings for screen
+if [ "$TERM" = "screen" ]; then
+        #PS1='\033k\033\\[\u@\h \W]\$ '
+        # [Screen][...] + command in status line
+        PS1='\033k\033\\\033k\W\033\134[\[\033[33m\]Screen\[\033[0m\]][\u@\[\033[36m\]\h\[\033[0m\] \W]\\$ '
+        #PS1='\[\033k\033\\\]\u@\h:\w\$ '
+else
+        # 通常のプロンプト
+        PROMPT_COMMAND='echo -ne "\033]0;KTerm on ${USER}@${HOSTNAME%%.*} :${PWD/#$HOME/~}\007"'
+        PS1='[\u@\h \W]\\$ '
+fi
