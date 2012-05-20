@@ -17,6 +17,8 @@ Bundle 'ZenCoding.vim'
 filetype plugin indent on
 
 """""""""""""""""""""""""
+" ZenCoding shortcut
+let g:user_zen_expandabbr_key = '<C-y>'
 
 syntax on
 set number
