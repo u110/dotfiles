@@ -62,3 +62,5 @@ highlight JpSpace cterm=underline ctermfg=Blue guifg=Blue
 au BufRead,BufNew * match JpSpace /　/
 set list
 
+" twigファイル配色設定
+autocmd BufWinEnter,BufNewFile *.twig set filetype=html
