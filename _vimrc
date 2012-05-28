@@ -7,7 +7,7 @@ call vundle#rc()
 
 " Vundle で管理するプラグインを書いていく
 " required!
-Bundle 'gmarik/vundle' 
+Bundle 'gmarik/vundle'
 
 " My Bundles in here
 Bundle 'unite.vim'
