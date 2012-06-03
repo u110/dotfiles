@@ -1,0 +1,47 @@
+# .bashrc
+
+# User specific aliases and functions
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias v='vim'
+alias vi='vim'
+alias ls='ls -G'
+alias sl='ls'
+alias la='ls -a'
+alias ll='ls -l'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# phpunit
+alias phpunit='phpunit --colors'
+
+
+
+# settings for screen
+if [ "$TERM" = "screen" ]; then
+        #PS1='\033k\033\\[\u@\h \W]\$ '
+        # [Screen][...] + command in status line
+        PS1='\033k\033\\\033k\W\033\134[\[\033[33m\]Screen\[\033[0m\]][\u@\[\033[36m\]\h\[\033[0m\] \W]\\$ '
+        #PS1='\[\033k\033\\\]\u@\h:\w\$ '
+else
+        # 通常のプロンプト
+        PROMPT_COMMAND='echo -ne "\033]0;KTerm on ${USER}@${HOSTNAME%%.*} :${PWD/#$HOME/~}\007"'
+        PS1='[\u@\h \W]\\$ '
+fi
+
+# Git commands --> .gitconfig
+#alias gitci="git commit"
+#alias gitst="git status"
+#alias gitlog="git log"
+#alias gitadd="git add -A"
+#alias gitdiff="git diff"
+#alias gitb='git branch'
+#alias gpull="git pull"
+#alias gd="git diff"
+#alias gco="git checkout"
+#alias gp="git pull --rebase"
+
