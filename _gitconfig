@@ -4,7 +4,7 @@
         branch = auto
         interactive = auto
 [user]
-        name = Yuu Ito
+        name = yit
 [diff]
         tool = vimdiff
 [difftool]
