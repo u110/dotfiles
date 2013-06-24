@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 " My Bundles in here
 Bundle 'unite.vim'
 Bundle 'ZenCoding.vim'
+Bundle 'The-NERD-tree'
 
 " required!
 filetype plugin indent on
