@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 " My Bundles in here
 Bundle 'unite.vim'
 Bundle 'ZenCoding.vim'
+Bundle 'The-NERD-tree'
 
 " required!
 filetype plugin indent on
@@ -30,13 +31,13 @@ set nowrap
 
 "タブ
 set expandtab "タブ入力をスペースにする
-"set tabstop=2 shiftwidth=2 softtabstop=2 autoindent
+set tabstop=2 shiftwidth=2 softtabstop=2 autoindent
 
 "検索
 set incsearch
 set ignorecase
 set smartcase
-set incsearch		" do incremental searching
+set incsearch " do incremental searching
 set hlsearch
 
 
