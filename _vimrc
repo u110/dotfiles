@@ -31,7 +31,7 @@ set nowrap
 
 "タブ
 set expandtab "タブ入力をスペースにする
-set tabstop=2 shiftwidth=2 softtabstop=2 autoindent
+"set tabstop=2 shiftwidth=2 softtabstop=2 autoindent
 
 "検索
 set incsearch
