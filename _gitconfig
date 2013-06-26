@@ -8,6 +8,7 @@
   interactive = auto
 [user]
   name = yit
+  email = yit@github.com
 [diff]
   tool = vimdiff
 [difftool]
