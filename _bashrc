@@ -6,7 +6,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias v='vim'
 alias vi='vim'
-alias ls='ls -G'
+alias ls='ls -GF --color'
 alias sl='ls'
 alias la='ls -a'
 alias ll='ls -l'
@@ -30,7 +30,9 @@ if [ "$TERM" = "screen" ]; then
 else
         # 通常のプロンプト
         PROMPT_COMMAND='echo -ne "\033]0;KTerm on ${USER}@${HOSTNAME%%.*} :${PWD/#$HOME/~}\007"'
-        PS1='[\u@\h \W]\\$ '
+        # git branch 表示
+        source ~/.git-completion.bash
+        PS1='[\u@\h \W$(__git_ps1 " (%s)")]\\$ '
 fi
 
 # Git commands --> .gitconfig

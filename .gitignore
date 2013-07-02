@@ -1,3 +1,5 @@
-_vim/bundle/*.vim
+# _vim/bundle/*
 _vim/bundle/The-NERD-tree/
+_vim/bundle/ZenCoding.vim/
+_vim/bundle/unite.vim/
 
