@@ -65,8 +65,7 @@ set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 " 全角スペース表示
 if has("syntax")
   syntax on
-  " PODバグ対策
-  syn sync fromstart
+  syn sync fromstart " PODバグ対策
   function! ActivateInvisibleIndicator()
     " 下の行の"　"は全角スペース
     syntax match InvisibleJISX0208Space "　" display containedin=ALL
