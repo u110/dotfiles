@@ -1,21 +1,22 @@
 [core]
-        editor = /usr/bin/vim
+  editor = /usr/bin/vim
+#pager = lv -c
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        interactive = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
 [user]
-        name = yit
-        email = you@example.com
+  name = yit
+  email = yit@github.com
 [diff]
-        tool = vimdiff
+  tool = vimdiff
 [difftool]
-        prompt = false
+  prompt = false
 [alias]
-        a = add
-        d = difftool
-        b = branch
-        co = checkout
-        st = status
-        ci = commit
+  a = add
+  d = difftool
+  b = branch
+  co = checkout
+  st = status
+  ci = commit
