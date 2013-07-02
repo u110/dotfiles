@@ -29,10 +29,12 @@ set smartindent
 
 set nowrap
 
+"""""""""""""""""""""""""
 "タブ
 set expandtab "タブ入力をスペースにする
 "set tabstop=2 shiftwidth=2 softtabstop=2 autoindent
 
+"""""""""""""""""""""""""
 "検索
 set incsearch
 set ignorecase
@@ -43,25 +45,41 @@ set hlsearch
 
 """"""""""""""""
 " キーマップ設定
-""""""""""""""""
+
 " タブ移動
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 
-
 """""""""""
 " 配色
-""""""""""" 
+
 " vimdiff 関連
 hi DiffAdd    ctermfg=black ctermbg=2
 hi DiffChange ctermfg=black ctermbg=3
 hi DiffDelete ctermfg=black ctermbg=6
 hi DiffText   ctermfg=black ctermbg=7
 
-" スペース表示
-highlight JpSpace cterm=underline ctermfg=Blue guifg=Blue
-au BufRead,BufNew * match JpSpace /　/
+" 不可視文字の表示
 set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+" 全角スペース表示
+if has("syntax")
+  syntax on
+  syn sync fromstart " PODバグ対策
+  function! ActivateInvisibleIndicator()
+    " 下の行の"　"は全角スペース
+    syntax match InvisibleJISX0208Space "　" display containedin=ALL
+    highlight InvisibleJISX0208Space term=underline ctermbg=Blue guibg=darkgray gui=underline
+    "syntax match InvisibleTrailedSpace "[ \t]\+$" display containedin=ALL
+    "highlight InvisibleTrailedSpace term=underline ctermbg=Red guibg=NONE gui=undercurl guisp=darkorange
+    "syntax match InvisibleTab "\t" display containedin=ALL
+    "highlight InvisibleTab term=underline ctermbg=white gui=undercurl guisp=darkslategray
+  endfunction
+  augroup invisible
+    autocmd! invisible
+    autocmd BufNew,BufRead * call ActivateInvisibleIndicator()
+  augroup END
+endif
 
 " twigファイル配色設定
 autocmd BufWinEnter,BufNewFile *.twig set filetype=html
