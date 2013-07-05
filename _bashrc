@@ -28,17 +28,17 @@ alias phpunit='phpunit --colors'
 
 
 
+source ~/.git-completion.bash
 # settings for screen
 if [ "$TERM" = "screen" ]; then
         #PS1='\033k\033\\[\u@\h \W]\$ '
         # [Screen][...] + command in status line
-        PS1='\033k\033\\\033k\W\033\134[\[\033[33m\]Screen\[\033[0m\]][\u@\[\033[36m\]\h\[\033[0m\] \W]\\$ '
+        PS1='\033k\033\\\033k\W\033\134[\[\033[33m\]Screen\[\033[0m\]][\u@\[\033[36m\]\h\[\033[0m\] \W$(__git_ps1 " (%s)")]\\$ '
         #PS1='\[\033k\033\\\]\u@\h:\w\$ '
 else
         # 通常のプロンプト
         PROMPT_COMMAND='echo -ne "\033]0;KTerm on ${USER}@${HOSTNAME%%.*} :${PWD/#$HOME/~}\007"'
         # git branch 表示
-        source ~/.git-completion.bash
         PS1='[\u@\h \W$(__git_ps1 " (%s)")]\\$ '
 fi
 

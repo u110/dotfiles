@@ -20,3 +20,7 @@
   co = checkout
   st = status
   ci = commit
+  logg = log --graph --decorate --pretty=format:\"%ad [%cn] %h> %n %Cgreen%d%Creset %s %n\" --name-status
+  logs = log --graph --decorate --pretty=format:\"%ad [%cn] %h> %n %Cgreen%d%Creset %s %n\" --stat
+  log1 = log --pretty=oneline
+
