@@ -6,8 +6,14 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias v='vim'
 alias vi='vim'
-# alias ls='ls -GF --color'
-alias ls='ls -GF '
+if [ `uname` = "Darwin" ]; then
+	#mac用のコード
+	alias ls='ls -FG'
+elif [ `uname` = "Linux" ]; then
+	#Linux用のコード
+	alias ls='ls -F --color'
+fi
+
 alias sl='ls'
 alias la='ls -a'
 alias ll='ls -l'
