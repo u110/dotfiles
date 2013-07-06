@@ -31,7 +31,7 @@ set nowrap
 
 """""""""""""""""""""""""
 "タブ
-set expandtab "タブ入力をスペースにする
+"set expandtab "タブ入力をスペースにする
 "set tabstop=2 shiftwidth=2 softtabstop=2 autoindent
 
 """""""""""""""""""""""""
