@@ -31,8 +31,8 @@ set nowrap
 
 """""""""""""""""""""""""
 "タブ
-"set expandtab "タブ入力をスペースにする
-"set tabstop=2 shiftwidth=2 softtabstop=2 autoindent
+set expandtab "タブ入力をスペースにする
+set tabstop=4 shiftwidth=4 softtabstop=4 autoindent
 
 """""""""""""""""""""""""
 "検索
@@ -81,5 +81,20 @@ if has("syntax")
   augroup END
 endif
 
-" twigファイル配色設定
+""""""""""""""""""""""
+" ファイル形式別設定
+" twig
 autocmd BufWinEnter,BufNewFile *.twig set filetype=html
+" Makefile
+autocmd FileType make setlocal noexpandtab
+" Google Apps Scripts
+autocmd BufWinEnter,BufNewFile *.gs set filetype=javascript
+
+
+
+
+
+
+
+
+
