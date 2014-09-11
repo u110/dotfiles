@@ -1,4 +1,7 @@
-all: backup remove link
+all: setup backup remove link
+setup:
+	git submodule init
+	git submodule update
 backup:
 	-mkdir ~/BAK_dotfiles;
 	-cp -r ~/.vim                 ~/BAK_dotfiles/.vim;
