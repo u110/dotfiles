@@ -7,11 +7,11 @@ call vundle#rc()
 
 " Vundle で管理するプラグインを書いていく
 " required!
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 " My Bundles in here
 Bundle 'unite.vim'
-Bundle 'ZenCoding.vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'The-NERD-tree'
 
 " required!
