@@ -8,7 +8,7 @@
   interactive = auto
 [user]
   name = u110
-  email = u110@github.com
+  email = u110@users.noreply.github.com
 [diff]
   tool = vimdiff
 [difftool]
