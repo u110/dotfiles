@@ -1,35 +1,34 @@
-"""""""""""""""""
-" Vundle settings
-"""""""""""""""""
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
-" Vundle で管理するプラグインを書いていく
-" required!
-Bundle 'gmarik/Vundle.vim'
+" Required:
+set runtimepath+=/Users/itouyuu/.vim/dein/repos/github.com/Shougo/dein.vim
 
-" My Bundles in here
-Bundle 'unite.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'The-NERD-tree'
+" Required:
+call dein#begin('/Users/itouyuu/.vim/dein')
 
-" required!
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+call dein#add('scrooloose/nerdtree')
+
+" Required:
+call dein#end()
+
+" Required:
 filetype plugin indent on
+syntax enable
 
-"""""""""""""""""""""""""
-" ZenCoding shortcut
-let g:user_zen_expandabbr_key = '<C-y>'
+" If you want to install not installed plugins on startup.
+" if dein#check_install()
+"   call dein#install()
+" endif
 
-syntax on
-set number
+"End dein Scripts-------------------------
 
-set autoindent
-set smartindent
 
-set nowrap
-
-"""""""""""""""""""""""""
 "タブ
 set expandtab "タブ入力をスペースにする
 set tabstop=4 shiftwidth=4 softtabstop=4 autoindent
@@ -54,10 +53,10 @@ nnoremap <C-p> gT
 " 配色
 
 " vimdiff 関連
-hi DiffAdd    ctermfg=black ctermbg=2
-hi DiffChange ctermfg=black ctermbg=3
-hi DiffDelete ctermfg=black ctermbg=6
-hi DiffText   ctermfg=black ctermbg=7
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
 
 " 不可視文字の表示
 set list
@@ -89,12 +88,3 @@ autocmd BufWinEnter,BufNewFile *.twig set filetype=html
 autocmd FileType make setlocal noexpandtab
 " Google Apps Scripts
 autocmd BufWinEnter,BufNewFile *.gs set filetype=javascript
-
-
-
-
-
-
-
-
-

@@ -1,2 +1,3 @@
-_vim/bundle/*
-_vim/.vim
+_vim/.*
+_vim/dein/*
+!_vim/dein/installer.sh

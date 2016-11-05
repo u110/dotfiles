@@ -7,8 +7,8 @@
   branch = auto
   interactive = auto
 [user]
-  name = yit
-  email = yit@github.com
+  name = u110
+  email = u110@github.com
 [diff]
   tool = vimdiff
 [difftool]
