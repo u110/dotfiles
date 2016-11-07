@@ -88,3 +88,9 @@ autocmd BufWinEnter,BufNewFile *.twig set filetype=html
 autocmd FileType make setlocal noexpandtab
 " Google Apps Scripts
 autocmd BufWinEnter,BufNewFile *.gs set filetype=javascript
+
+" NERDTree
+autocmd VimEnter * execute 'NERDTree'
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+let NERDTreeShowHidden = 1
+let NERDTreeIgnore=['\.pyc']
