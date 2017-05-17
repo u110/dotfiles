@@ -18,10 +18,10 @@ source $HOME/dotfiles/.git-completion.bash
 source $HOME/dotfiles/.git-prompt.sh
 
 # プロンプトに各種情報を表示
-GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWUPSTREAM=1
-GIT_PS1_SHOWUNTRACKEDFILES=
-GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
 
 ############### ターミナルのコマンド受付状態の表示変更
 # \u ユーザ名
