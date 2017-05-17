@@ -1,5 +1,0 @@
-#!/bin/sh
-
-# put the file in a directory which set in th PATH
-# echo $PATH
-vimdiff "$2" "$5"

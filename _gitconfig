@@ -1,15 +1,22 @@
+[user]
+  name = Yuu Ito
+  email = yu_ito@users.noreply.github.com
 [diff]
-  external = git_diff_wrapper
-[pager]
-  diff =
-[user]
-#	name =
-#  email =
+  tool = vimdiff
+[difftool]
+  prompt = false
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-[user]
-	name = Yuu Ito
-	email = yu_ito@users.noreply.github.com
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+[alias]
+  a = add
+  d = difftool
+  b = branch
+  co = checkout
+  st = status
+  ci = commit
+  logg = log --graph --decorate --pretty=format:\"%ad [%cn] %h> %n %Cgreen%d%Creset %s %n\" --name-status
+  logs = log --graph --decorate --pretty=format:\"%ad [%cn] %h> %n %Cgreen%d%Creset %s %n\" --stat
+  log1 = log --pretty=oneline --graph
