@@ -5,8 +5,10 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias vi='vim'
+alias ls='ls -FG'
 alias l='ls'
 alias la='ls -a'
+alias ll='ls -al'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
