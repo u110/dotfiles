@@ -22,7 +22,8 @@ if dein#load_state('~/dotfiles/_vim/dein')
   " Add or remove your plugins here:
   call dein#add('Shougo/dein.vim')
   call dein#add('scrooloose/nerdtree')
-
+  call dein#add('davidhalter/jedi-vim')
+  call dein#add('jmcantrell/vim-virtualenv')
   " Required:
   call dein#end()
   call dein#save_state()
@@ -97,3 +98,16 @@ autocmd VimEnter * execute 'NERDTree'
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore=['\.pyc']
+
+
+"-------------------------------------------------------------------------------
+" 基本設定 Basics
+"-------------------------------------------------------------------------------
+let g:mapleader=","                " キーマップリーダー
+
+" jedi setting
+
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#goto_assignments_command = "<C-g>"
+let g:jedi#goto_definitions_command = "<C-d>"
+let g:jedi#documentation_command = "<C-k>"
