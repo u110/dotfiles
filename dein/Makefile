@@ -6,4 +6,4 @@ installer.sh:
 	curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 
 setup:
-	sh ./installer.sh ~/dotfiles/_vim/dein
+	sh ~/dotfiles/dein/installer.sh ~/dotfiles/_vim/dein
