@@ -63,6 +63,9 @@ set smartcase
 set incsearch		" do incremental searching
 set hlsearch
 
+" backspace
+set backspace=indent,eol,start
+
 
 """"""""""""""""
 " キーマップ設定
