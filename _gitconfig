@@ -1,6 +1,6 @@
 [user]
   name = Yuu Ito
-  email = yu_ito@users.noreply.github.com
+  email = yuu-ito@users.noreply.github.com
 [diff]
   tool = vimdiff
 [difftool]
