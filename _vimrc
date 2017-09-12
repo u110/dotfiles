@@ -55,7 +55,7 @@ set nowrap
 
 "タブ
 set expandtab "タブ入力をスペースにする
-"set tabstop=2 shiftwidth=2 softtabstop=2 autoindent
+set tabstop=2 shiftwidth=2 softtabstop=2 autoindent
 
 "検索
 set incsearch
@@ -107,7 +107,10 @@ let g:mapleader=","                " キーマップリーダー
 
 " jedi setting
 
-let g:jedi#completions_command = "<C-Space>"
+let g:jedi#completions_command = "<C-k>"
 let g:jedi#goto_assignments_command = "<C-g>"
 let g:jedi#goto_definitions_command = "<C-d>"
-let g:jedi#documentation_command = "<C-k>"
+" let g:jedi#documentation_command = "<C-k>"
+" let g:jedi#documentation_command = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#popup_on_dot = 0
