@@ -1,6 +1,5 @@
 [core]
   editor = /usr/bin/vim
-#pager = lv -c
 [color]
   diff = auto
   status = auto
@@ -13,6 +12,11 @@
   tool = vimdiff
 [difftool]
   prompt = false
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
 [alias]
   a = add
   d = difftool
@@ -22,5 +26,7 @@
   ci = commit
   logg = log --graph --decorate --pretty=format:\"%ad [%cn] %h> %n %Cgreen%d%Creset %s %n\" --name-status
   logs = log --graph --decorate --pretty=format:\"%ad [%cn] %h> %n %Cgreen%d%Creset %s %n\" --stat
-  log1 = log --pretty=oneline
-
+  log1 = log --pretty=oneline --graph
+  f = fetch --all --prune
+[core]
+  editor = vim -c \"set fenc=utf-8\"

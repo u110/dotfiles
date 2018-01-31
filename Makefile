@@ -1,23 +1,16 @@
-all: setup backup remove link
-setup:
-	git submodule init
-	git submodule update
-backup:
-	-mkdir ~/BAK_dotfiles;
-	-cp -r ~/.vim                 ~/BAK_dotfiles/.vim;
-	-cp -r ~/.vimrc               ~/BAK_dotfiles/.vimrc;
-	-cp -r ~/.gitconfig           ~/BAK_dotfiles/.gitconfig;
-	-cp -r ~/.bashrc              ~/BAK_dotfiles/.bashrc;
-	-cp -r ~/.git-completion.bash ~/BAK_dotfiles/.git-completion.bash;
-remove:
-	-rm -rf ~/.vim
-	-rm -rf ~/.vimrc
-	-rm -rf ~/.gitconfig
-	-rm -rf ~/.bashrc
-	-rm -rf ~/.git-completion.bash
-link:
-	ln -s ~/dotfiles/_vimrc               ~/.vimrc
-	ln -s ~/dotfiles/_vim                 ~/.vim
-	ln -s ~/dotfiles/_gitconfig           ~/.gitconfig
-	ln -s ~/dotfiles/_bashrc              ~/.bashrc
-	ln -s ~/dotfiles/_git-completion.bash ~/.git-completion.bash
+all: setup 
+
+setup: vimrc
+
+gitconfig:
+	ln -s ~/dotfiles/_gitconfig ~/.gitconfig
+
+tmux.conf:
+	ln -s ~/dotfiles/_tmux.conf ~/.tmux.conf
+
+bash_profile:
+	cat ~/dotfiles/_bashrc >> ~/.bashrc
+
+vimrc:
+	make -C dein
+	ln -s ~/dotfiles/_vimrc ~/.vimrc
