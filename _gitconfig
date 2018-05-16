@@ -20,7 +20,7 @@
 [alias]
   a = add
   d = difftool
-  b = branch
+  b = branch -vvv
   co = checkout
   st = status
   ci = commit
