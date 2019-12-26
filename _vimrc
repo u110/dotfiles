@@ -24,6 +24,7 @@ if dein#load_state('~/dotfiles/_vim/dein')
   call dein#add('scrooloose/nerdtree')
   call dein#add('davidhalter/jedi-vim')
   call dein#add('jmcantrell/vim-virtualenv')
+  call dein#add('mattn/emmet-vim')
   " Required:
   call dein#end()
   call dein#save_state()
@@ -84,10 +85,13 @@ hi DiffChange ctermfg=black ctermbg=3
 hi DiffDelete ctermfg=black ctermbg=6
 hi DiffText   ctermfg=black ctermbg=7
 
-" スペース表示
-highlight JpSpace cterm=underline ctermfg=Blue guifg=Blue
+" 不可視文字
+highlight JpSpace cterm=underline ctermfg=59 guifg=Blue
 au BufRead,BufNew * match JpSpace /　/
 set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+hi NonText    ctermfg=59
+hi SpecialKey ctermfg=59
 
 " twigファイル配色設定
 autocmd BufWinEnter,BufNewFile *.twig set filetype=html
@@ -96,7 +100,7 @@ autocmd BufWinEnter,BufNewFile *.twig set filetype=html
 autocmd VimEnter * execute 'NERDTree'
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
-let NERDTreeIgnore=['\.pyc']
+let NERDTreeIgnore=['\.pyc', '\.swp']
 
 
 "-------------------------------------------------------------------------------
