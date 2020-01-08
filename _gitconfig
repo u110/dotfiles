@@ -1,5 +1,6 @@
 [core]
   editor = /usr/bin/vim
+  excludesfile = /Users/u110/dotfiles/_gitignore
 [color]
   diff = auto
   status = auto
