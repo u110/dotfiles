@@ -22,9 +22,10 @@ if dein#load_state('~/dotfiles/_vim/dein')
   " Add or remove your plugins here:
   call dein#add('Shougo/dein.vim')
   call dein#add('scrooloose/nerdtree')
-  call dein#add('davidhalter/jedi-vim')
+  "call dein#add('davidhalter/jedi-vim')
   call dein#add('jmcantrell/vim-virtualenv')
   call dein#add('mattn/emmet-vim')
+  call dein#add('fatih/vim-go')
   " Required:
   call dein#end()
   call dein#save_state()
