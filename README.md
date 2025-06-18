@@ -1,6 +1,8 @@
 How to use
 ==========
 
+test commit
+
 Make backups
 ------------
     mv ~/.vimrc ~/.vimrc.BAK
