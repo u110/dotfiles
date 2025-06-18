@@ -3,6 +3,7 @@ How to use
 
 test commit
 retry
+retry 2
 
 Make backups
 ------------
