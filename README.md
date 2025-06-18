@@ -2,6 +2,7 @@ How to use
 ==========
 
 test commit
+retry
 
 Make backups
 ------------
