@@ -10,14 +10,14 @@
 
 ### 完全セットアップ
 ```bash
-make setup        # dein.vimを使ったvim設定をセットアップ
+make setup        # vim設定とzsh設定をセットアップ
 ```
 
 ### 個別コンポーネント
 ```bash
 make gitconfig    # git設定のシンボリックリンクを作成
 make tmux.conf    # tmux設定のシンボリックリンクを作成
-make bash_profile # bash設定を ~/.bash_profile に追記
+make zshrc        # zsh設定のシンボリックリンクを作成
 make vimrc        # dein.vimをインストールしてvim設定のリンクを作成
 ```
 
@@ -41,18 +41,18 @@ make -C dein      # dein.vimプラグインマネージャーをダウンロー�
   - デフォルトエディタをVimに設定、UTF-8エンコーディング
   - リベース時の自動stash有効化
 
-- **_bashrc**: Bashシェル設定
-  - rm, cp, mvの安全なエイリアス (対話モード)
-  - ステータス表示付きGitプロンプト統合
-  - Gitブランチ表示付きカスタムPS1プロンプト
-  - Git補完機能有効化
+- **_zshrc**: Zshシェル設定
+  - PATH設定（Homebrew、システムバイナリ）
+  - Homebrew連携（zsh-completions, zsh-autosuggestions, zsh-git-prompt）
+  - Gitプロンプト統合（git_prompt関数とprecmd）
+  - エイリアス設定: python, rm, cp, mv, vi, ls系, cc, color
 
 - **_gitignore**: グローバルgitignoreルール
   - 除外対象: *.swp, .DS_Store, .vscode
 
 ### ブランチ情報
 - **master**: 安定版設定のメインブランチ
-- **zsh**: 現在の作業ブランチ (masterとの差分なし)
+- **zsh**: zsh環境への移行用作業ブランチ（現在のブランチ）
 - **test**: テスト用ブランチ
 
 ## 開発ガイドライン
