@@ -1,0 +1,46 @@
+typeset -U path PATH
+path=(
+  /opt/homebrew/bin(N-/)
+  /opt/homebrew/sbin(N-/)
+  /usr/bin
+  /usr/sbin
+  /bin
+  /sbin
+  /usr/local/bin(N-/)
+  /usr/local/sbin(N-/)
+  /Library/Apple/usr/bin
+)
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source $(brew --prefix)/opt/zsh-git-prompt/zshrc.sh
+  autoload -Uz compinit && compinit
+fi
+
+autoload -Uz colors && colors
+
+git_prompt() {
+  if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = true ]; then
+    PROMPT="%F{034}%h%f:%F{020}%~%f $(git_super_status)"$'\n'"%# "
+  else
+    PROMPT="%F{034}%h%f:%F{020}%~%f "$'\n'"%# "
+  fi
+}
+
+precmd() {
+  git_prompt
+}
+
+# User specific aliases and functions
+alias python="python3"
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias vi='vim'
+alias ls='ls -FG'
+alias l='ls'
+alias la='ls -a'
+alias ll='ls -al'
+alias cc='npx ccusage@latest'
+alias color='for code in {000..255}; do print -nP -- "%F{$code}$code %f"; [ $((${code} % 16)) -eq 15 ] && echo; done'
