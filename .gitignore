@@ -1,3 +1,4 @@
 _vim/.*
 _vim/dein/*
 !_vim/dein/installer.sh
+.claude/*.local.json
