@@ -26,18 +26,51 @@ else
   )
 fi
 
+# zsh plugins setup
 if type brew &>/dev/null; then
+  # macOS with Homebrew
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-  source $(brew --prefix)/opt/zsh-git-prompt/zshrc.sh
+
+  # zsh-autosuggestions
+  if [ -f $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  fi
+
+  # zsh-git-prompt
+  if [ -f $(brew --prefix)/opt/zsh-git-prompt/zshrc.sh ]; then
+    source $(brew --prefix)/opt/zsh-git-prompt/zshrc.sh
+    ZSH_GIT_PROMPT_AVAILABLE=true
+  fi
+
+  autoload -Uz compinit && compinit
+else
+  # Linux (Ubuntu, etc.)
+  # zsh-autosuggestions
+  if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  fi
+
+  # zsh-syntax-highlighting (alternative)
+  if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  fi
+
   autoload -Uz compinit && compinit
 fi
 
 autoload -Uz colors && colors
 
+# Git prompt function
 git_prompt() {
   if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = true ]; then
-    PROMPT="%F{034}%h%f:%F{020}%~%f $(git_super_status)"$'\n'"%# "
+    if [ "${ZSH_GIT_PROMPT_AVAILABLE}" = true ]; then
+      # Use zsh-git-prompt if available
+      PROMPT="%F{034}%h%f:%F{020}%~%f $(git_super_status)"$'\n'"%# "
+    else
+      # Fallback: simple git branch display
+      local branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+      PROMPT="%F{034}%h%f:%F{020}%~%f %F{red}[${branch}]%f"$'\n'"%# "
+    fi
   else
     PROMPT="%F{034}%h%f:%F{020}%~%f "$'\n'"%# "
   fi
