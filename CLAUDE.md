@@ -26,6 +26,33 @@ make vimrc        # dein.vimをインストールしてvim設定のリンクを�
 make -C dein      # dein.vimプラグインマネージャーをダウンロード・インストール
 ```
 
+## Ubuntu環境でのセットアップ
+
+### 必要なパッケージのインストール
+```bash
+# 基本パッケージ
+sudo apt update
+sudo apt install -y zsh git vim curl
+
+# zshプラグイン（オプション）
+sudo apt install -y zsh-autosuggestions zsh-syntax-highlighting
+
+# zshをデフォルトシェルに設定
+chsh -s $(which zsh)
+```
+
+### 環境別の動作
+- **PATH設定**: macOSとLinuxで自動的に最適なPATHを設定
+- **zshプラグイン**:
+  - macOS: Homebrew経由で自動読み込み
+  - Linux: `/usr/share/`配下から自動読み込み
+- **Gitプロンプト**:
+  - zsh-git-prompt利用可能時: 詳細なステータス表示
+  - 未インストール時: シンプルなブランチ名表示
+- **lsコマンド**:
+  - macOS: `ls -FG` (BSD版)
+  - Linux: `ls -F --color=auto` (GNU版)
+
 ## リポジトリ構造
 
 ### 主要な設定ファイル
@@ -41,11 +68,11 @@ make -C dein      # dein.vimプラグインマネージャーをダウンロー�
   - デフォルトエディタをVimに設定、UTF-8エンコーディング
   - リベース時の自動stash有効化
 
-- **_zshrc**: Zshシェル設定
-  - PATH設定（Homebrew、システムバイナリ）
-  - Homebrew連携（zsh-completions, zsh-autosuggestions, zsh-git-prompt）
-  - Gitプロンプト統合（git_prompt関数とprecmd）
-  - エイリアス設定: python, rm, cp, mv, vi, ls系, cc, color
+- **_zshrc**: Zshシェル設定（macOS・Linux両対応）
+  - OS別PATH設定（macOS: Homebrew含む、Linux: 標準構成）
+  - 環境別zshプラグイン読み込み（Homebrew/apt）
+  - Gitプロンプト統合（zsh-git-prompt利用可能時は詳細表示、未インストール時は簡易表示）
+  - OS別エイリアス設定: python, rm, cp, mv, vi, ls系（BSD/GNU対応）, cc, color
 
 - **_gitignore**: グローバルgitignoreルール
   - 除外対象: *.swp, .DS_Store, .vscode
