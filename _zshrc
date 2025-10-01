@@ -86,7 +86,14 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias vi='vim'
-alias ls='ls -FG'
+
+# OS-specific ls alias
+if [[ "$OSTYPE" == darwin* ]]; then
+  alias ls='ls -FG'
+else
+  alias ls='ls -F --color=auto'
+fi
+
 alias l='ls'
 alias la='ls -a'
 alias ll='ls -al'
