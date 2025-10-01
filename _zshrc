@@ -1,15 +1,30 @@
-typeset -U path PATH
-path=(
-  /opt/homebrew/bin(N-/)
-  /opt/homebrew/sbin(N-/)
-  /usr/bin
-  /usr/sbin
-  /bin
-  /sbin
-  /usr/local/bin(N-/)
-  /usr/local/sbin(N-/)
-  /Library/Apple/usr/bin
-)
+# OS detection
+if [[ "$OSTYPE" == darwin* ]]; then
+  # macOS
+  typeset -U path PATH
+  path=(
+    /opt/homebrew/bin(N-/)
+    /opt/homebrew/sbin(N-/)
+    /usr/bin
+    /usr/sbin
+    /bin
+    /sbin
+    /usr/local/bin(N-/)
+    /usr/local/sbin(N-/)
+    /Library/Apple/usr/bin
+  )
+else
+  # Linux (Ubuntu, etc.)
+  typeset -U path PATH
+  path=(
+    /usr/local/bin
+    /usr/local/sbin
+    /usr/bin
+    /usr/sbin
+    /bin
+    /sbin
+  )
+fi
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
