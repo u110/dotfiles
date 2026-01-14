@@ -1,6 +1,6 @@
-all: setup 
+all: setup
 
-setup: vimrc
+setup: vimrc zshrc
 
 gitconfig:
 	ln -s ~/dotfiles/_gitconfig ~/.gitconfig
@@ -8,8 +8,8 @@ gitconfig:
 tmux.conf:
 	ln -s ~/dotfiles/_tmux.conf ~/.tmux.conf
 
-bash_profile:
-	cat ~/dotfiles/_bashrc >> ~/.bash_profile
+zshrc:
+	ln -s ~/dotfiles/_zshrc ~/.zshrc
 
 vimrc:
 	make -C dein
